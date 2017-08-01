@@ -1,0 +1,83 @@
+<!-- We don't need a full layout in this file because this page will be parsed with Ajax. -->
+<!-- Top Navbar-->
+<div class="navbar">
+    <div class="navbar-inner">
+        <div class="left">
+            <a href="#" class="back link">
+                <i class="fa fa-angle-left" aria-hidden="true"></i>
+            </a>
+        </div>
+        <div class="center sliding">Retiros Realizados</div>
+        <div class="right">
+            <a href="#" class="link icon-only open-panel"><i class="fa fa-list-ul" aria-hidden="true"></i></a>
+        </div>
+    </div>
+</div>
+<div class="pages">
+    <div data-page="retiros_realizados" class="page toolbar-through navbar-through">
+        <div class="page-content">
+          <div style="margin-top: 0;" class="list-block">
+              <ul>
+                <!-- Smart select item -->
+                <li>
+                  <!-- Additional "smart-select" class -->
+                  <a href="#" class="item-link smart-select" data-searchbar="true" data-searchbar-placeholder="Buscar Zona">
+                    <!-- select -->
+                    <select name="fruits">
+                      <option value="Zona 1" selected>Zona 1</option> 
+                      <option value="Zona 2">Zona 2</option>
+                      <option value="Zona 3">Zona 3</option>
+                      <option value="Zona 4">Zona 4</option>
+                      <option value="Zona 5">Zona 5</option>
+                    </select>
+                    <div class="item-content">
+                      <div class="item-inner">
+                        <!-- Select label -->
+                        <div class="item-title">Zona</div>
+                      </div>
+                    </div>
+                  </a>
+                </li>
+                <!-- Another smart selects or list view elements -->
+			    <li>
+                  <div class="item-content">
+                    <div class="item-inner">
+                      <div class="item-title label">Fecha</div>
+                      <div class="item-input">
+                        <input style="text-align: right;" type="text" readonly="" placeholder="Fecha" id="fecha-retiro">
+                      </div>
+                    </div>
+                  </div>
+                </li>
+                <!-- Text inputs -->
+                <li>
+                  <div class="item-content">
+                    <div class="item-inner">
+                      <div class="item-title label">Cantidad</div>
+                      <div class="item-input">
+                        <input style="text-align: right;" type="text" placeholder="$0.00">
+                      </div>
+                    </div>
+                  </div>
+                </li>
+                <li>
+                  <a style="color: #a3498b;" href="#" class="item-link list-button">Guardar</a>
+                </li>
+              </ul>
+            </div> 
+             <!-- We can wrap content with additional "content-block-inner" element for additional highlighting -->
+            <div style="margin-bottom: 0;" class="content-block">
+              <div class="content-block-inner">
+                    <h4> > Nulla quis lorem ut libero</h4>
+                    <ul>
+                        <li>Proin eget tortor risus.</li>
+                        <li>Donec sollicitudin molestie malesuada.</li>
+                        <li>Vivamus magna justo.</li>
+                        <li>convallis at tellus.</li>
+                        <li>Nulla quis lorem ut libero malesuada feugiat.</li>
+                    </ul>
+              </div>
+            </div>
+        </div>
+    </div>
+</div>
