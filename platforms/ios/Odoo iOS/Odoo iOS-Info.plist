@@ -52,5 +52,29 @@
       <string>UIInterfaceOrientationPortraitUpsideDown</string>
       <string>UIInterfaceOrientationLandscapeRight</string>
     </array>
+    <key>Google Maps API Key</key>
+    <string>AIzaSyBv_8SkOXWbno-TDIeY7LaerT6GNDzwLEg</string>
+    <key>NSLocationWhenInUseUsageDescription</key>
+    <string>$NSLocationWhenInUseUsageDescription</string>
+    <key>NSLocationAlwaysUsageDescription</key>
+    <string>$NSLocationAlwaysUsageDescription</string>
+    <key>LSApplicationQueriesSchemes</key>
+    <array>
+      <string>googlechromes</string>
+      <string>comgooglemaps</string>
+    </array>
+    <key>CFBundleURLTypes</key>
+    <array>
+      <dict>
+        <key>CFBundleTypeRole</key>
+        <string>Editor</string>
+        <key>CFBundleURLName</key>
+        <string>com.mundocomputo.odoo</string>
+        <key>CFBundleURLSchemes</key>
+        <array>
+          <string>com.mundocomputo.odoo</string>
+        </array>
+      </dict>
+    </array>
   </dict>
 </plist>

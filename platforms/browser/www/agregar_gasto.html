@@ -18,25 +18,17 @@
         <div class="page-content">
           <div style="margin-top: 0;" class="list-block">
               <ul>
-                <!-- Smart select item -->
+                <!-- Select -->
                 <li>
-                  <!-- Additional "smart-select" class -->
-                  <a href="#" class="item-link smart-select" data-searchbar="true" data-searchbar-placeholder="Buscar Zona">
-                    <!-- select -->
-                    <select name="fruits">
-                      <option value="Zona 1" selected>Zona 1</option>
-                      <option value="Zona 2">Zona 2</option>
-                      <option value="Zona 3">Zona 3</option>
-                      <option value="Zona 4">Zona 4</option>
-                      <option value="Zona 5">Zona 5</option>
-                    </select>
-                    <div class="item-content">
-                      <div class="item-inner">
-                        <!-- Select label -->
-                        <div class="item-title">Zona</div>
+                  <div class="item-content">
+                    <div class="item-inner">
+                      <div class="item-title label">Zona</div>
+                      <div class="item-input">
+                        <select dir="rtl" id="lista-zonas-gasto">
+                        </select>
                       </div>
                     </div>
-                  </a>
+                  </div>
                 </li>
                 <!-- Another smart selects or list view elements -->
 			          <li>
@@ -49,43 +41,40 @@
                     </div>
                   </div>
                 </li>
+                <!-- Select -->
                 <li>
-                  <!-- Additional "smart-select" class -->
-                  <a href="#" class="item-link smart-select" data-searchbar="true" data-searchbar-placeholder="Buscar Cliente">
-                    <!-- select -->
-                    <select name="fruits">
-                      <option value="Servicios" selected>Servicios</option>
-                      <option value="Alimentación">Alimentación</option>
-                      <option value="Transporte">Transporte</option>
-                      <option value="Otros">Otros</option>
-                    </select>
-                    <div class="item-content">
-                      <div class="item-inner">
-                        <!-- Select label -->
-                        <div class="item-title">Gasto Realizado</div>
+                  <div class="item-content">
+                    <div class="item-inner">
+                      <div class="item-title label">Gasto Realizado</div>
+                      <div class="item-input">
+                        <select dir="rtl" id="gasto-realizado">
+                          <option value="Servicios" selected>Servicios</option>
+                          <option value="Alimentación">Alimentación</option>
+                          <option value="Transporte">Transporte</option>
+                          <option value="Otros">Otros</option>
+                        </select>
                       </div>
                     </div>
-                  </a>
+                  </div>
                 </li>
-                <!-- Another smart selects or list view elements -->
                 <!-- Text inputs -->
                 <li>
                   <div class="item-content">
                     <div class="item-inner">
                       <div class="item-title label">Cantidad</div>
                       <div class="item-input">
-                        <input style="text-align: right;" type="text" placeholder="$0.00">
+                        <input id="cantidad-gasto" style="text-align: right;" type="text" placeholder="$0.00">
                       </div>
                     </div>
                   </div>
                 </li>
                 <li>
-                  <a style="color: #a3498b;" href="#" class="item-link list-button">Guardar</a>
+                  <a style="color: #a3498b;" href="#" class="item-link list-button btn-agregar-gasto">Guardar</a>
                 </li>
               </ul>
             </div> 
              <!-- We can wrap content with additional "content-block-inner" element for additional highlighting -->
-            <div style="margin-bottom: 0;" class="content-block">
+            <!-- <div style="margin-bottom: 0;" class="content-block">
               <div class="content-block-inner">
                     <h4> > Nulla quis lorem ut libero</h4>
                     <ul>
@@ -96,7 +85,7 @@
                         <li>Nulla quis lorem ut libero malesuada feugiat.</li>
                     </ul>
               </div>
-            </div>
+            </div> -->
         </div>
     </div>
 </div>

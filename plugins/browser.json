@@ -18,6 +18,12 @@
         },
         "cordova-plugin-sqlite-2": {
             "PACKAGE_NAME": "com.phonegap.framework7"
+        },
+        "cordova-plugin-network-information": {
+            "PACKAGE_NAME": "com.mundocomputo.odoo"
+        },
+        "cordova-plugin-googlemaps": {
+            "PACKAGE_NAME": "com.mundocomputo.odoo"
         }
     },
     "dependent_plugins": {}

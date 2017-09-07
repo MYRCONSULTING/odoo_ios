@@ -19,54 +19,57 @@
         <div class="page-content">
           <div style="margin-top: 0;" class="list-block">
               <ul>
-                <!-- Smart select item -->
+                <!-- Select -->
                 <li>
-                  <!-- Additional "smart-select" class -->
-                  <a href="#" class="item-link smart-select" data-searchbar="true" data-searchbar-placeholder="Buscar Zona">
-                    <!-- select -->
-                    <select name="fruits">
-                      <option value="Zona 1" selected>Zona 1</option>
-                      <option value="Zona 2">Zona 2</option>
-                      <option value="Zona 3">Zona 3</option>
-                      <option value="Zona 4">Zona 4</option>
-                      <option value="Zona 5">Zona 5</option>
-                    </select>
-                    <div class="item-content">
-                      <div class="item-inner">
-                        <!-- Select label -->
-                        <div class="item-title">Zona</div>
+                  <div class="item-content">
+                    <div class="item-inner">
+                      <div class="item-title label">Zona</div>
+                      <div class="item-input">
+                        <select dir="rtl" id="lista-zonas-prestamo">
+                        </select>
                       </div>
                     </div>
-                  </a>
+                  </div>
                 </li>
-                <!-- Another smart selects or list view elements -->
+                <!-- Select -->
                 <li>
-                  <!-- Additional "smart-select" class -->
-                  <a href="#" class="item-link smart-select" data-searchbar="true" data-searchbar-placeholder="Buscar Cliente">
-                    <!-- select -->
-                    <select name="fruits">
-                      <option value="Cliente 1" selected>Cliente 1</option>
-                      <option value="Cliente 2">Cliente 2</option>
-                      <option value="Cliente 3">Cliente 3</option>
-                      <option value="Cliente 4">Cliente 4</option>
-                      <option value="Cliente 5">Cliente 5</option>
-                    </select>
-                    <div class="item-content">
-                      <div class="item-inner">
-                        <!-- Select label -->
-                        <div class="item-title">Cliente</div>
+                  <div class="item-content">
+                    <div class="item-inner">
+                      <div class="item-title label">Cliente</div>
+                      <div class="item-input">
+                        <select dir="rtl" id="lista-clientes-prestamo">
+                        </select>
                       </div>
                     </div>
-                  </a>
+                  </div>
                 </li>
-                <!-- Another smart selects or list view elements -->
+                <li>
+                  <div class="item-content">
+                    <div class="item-inner">
+                      <div class="item-title label">Fecha</div>
+                      <div class="item-input">
+                        <input style="text-align: right;" type="text" readonly="" placeholder="Fecha" id="fecha-prestamo">
+                      </div>
+                    </div>
+                  </div>
+                </li>
                 <!-- Text inputs -->
                 <li>
                   <div class="item-content">
                     <div class="item-inner">
-                      <div class="item-title label">Prestamo</div>
+                      <div class="item-title label">Valor Prestamo</div>
                       <div class="item-input">
-                        <input style="text-align: right;" type="text" placeholder="$0.00">
+                        <input class="change-prestamo" id="valor-prestamo" style="text-align: right;" type="number" placeholder="$0.00">
+                      </div>
+                    </div>
+                  </div>
+                </li>
+                <li>
+                  <div class="item-content">
+                    <div class="item-inner">
+                      <div class="item-title label">% Interés</div>
+                      <div class="item-input">
+                        <input class="change-prestamo" id="interes-prestamo" style="text-align: right;" type="number" placeholder="$0.00">
                       </div>
                     </div>
                   </div>
@@ -76,36 +79,23 @@
                     <div class="item-inner">
                       <div class="item-title label">Cuotas</div>
                       <div class="item-input">
-                        <input style="text-align: right;" type="text" placeholder="0">
+                        <input class="change-prestamo" id="cuotas-prestamo" style="text-align: right;" type="number" placeholder="0">
                       </div>
                     </div>
                   </div>
                 </li>
                 <li>
-                  <div class="item-content">
-                    <div class="item-inner">
-                      <div class="item-title label">Precio a pagar</div>
-                      <div class="item-input">
-                        <input style="text-align: right;" type="text" placeholder="$0.00">
-                      </div>
-                    </div>
-                  </div>
-                </li>
-                <li>
-                  <a style="color: #a3498b;" href="#" class="item-link list-button">Guardar</a>
+                  <a style="color: #a3498b;" href="#" class="item-link list-button btn-agregar-prestamo">Guardar</a>
                 </li>
               </ul>
             </div> 
              <!-- We can wrap content with additional "content-block-inner" element for additional highlighting -->
             <div style="margin-bottom: 0;" class="content-block">
               <div class="content-block-inner">
-                    <h4> > Nulla quis lorem ut libero</h4>
+                    <h4> Información del prestamo</h4>
                     <ul>
-                        <li>Proin eget tortor risus.</li>
-                        <li>Donec sollicitudin molestie malesuada.</li>
-                        <li>Vivamus magna justo.</li>
-                        <li>convallis at tellus.</li>
-                        <li>Nulla quis lorem ut libero malesuada feugiat.</li>
+                        <li>Valor a pagar: <span id="precio-prestamo">0</span></li>
+                        <li>Valor Cuota: <span id="valor-cuota">0</span></li>
                     </ul>
               </div>
             </div>

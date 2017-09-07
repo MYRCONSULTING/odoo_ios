@@ -49,9 +49,8 @@ function handleDrop(e) {
 
 function handleDragEnd(e) {
   // this/e.target is the source node.
-
+  $$('#lista-clientes li').css('opacity', '1');
   [].forEach.call(cols, function (col) {
     col.classList.remove('over');
-    $$('#lista-clientes li').css('opacity', '1');
   });
 }

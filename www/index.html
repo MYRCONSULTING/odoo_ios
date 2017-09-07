@@ -10,7 +10,7 @@
             * Disables use of inline scripts in order to mitigate risk of XSS vulnerabilities. To change this:
                 * Enable inline JS: add 'unsafe-inline' to default-src
         -->
-    <meta http-equiv="Content-Security-Policy" content="default-src *; style-src 'self' 'unsafe-inline'; object-src 'none';  img-src 'self' data: ; font-src 'self'; script-src 'self' 'unsafe-inline' 'unsafe-eval'">
+    <meta http-equiv="Content-Security-Policy" content="default-src *; style-src * 'self' 'unsafe-inline'; object-src 'none';  img-src * 'self' data: ; font-src 'self'; script-src 'self' 'unsafe-inline' 'unsafe-eval'">
 
     <!-- Required meta tags-->
     <meta charset="utf-8">
@@ -29,6 +29,7 @@
     <link rel="stylesheet" href="lib/font-awesome-4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="lib/framework7/css/framework7.ios.min.css">
     <link rel="stylesheet" href="lib/framework7/css/framework7.ios.colors.min.css">
+   
 
     <link rel="stylesheet" href="css/styles.css">
 </head>
@@ -42,17 +43,17 @@
     <!-- Left panel with reveal effect-->
     <div class="panel panel-left panel-reveal" style="background: #efefef;">
         <div class="top-menu-panel">
-            <img src="images/user.jpg" alt="">
-            <h2 class="title-top-menu"><span id="title-left-menu"></span><i class="fa fa-angle-down" aria-hidden="true"></i></h2>
+            <h2 class="title-top-menu" style="text-transform: capitalize;"><span id="title-left-menu"></span></h2>
         </div>
         <div class="content-block">
-            <a href="login.html"><h5><i class="fa fa-inbox" aria-hidden="true"></i> Inbox</h5></a>
-            <a href="listado.html"><h5><i class="fa fa-paper-plane" aria-hidden="true"></i> Lista Prestamos</h5></a>
-            <a href="agregar_prestamo.html"><h5><i class="fa fa-users" aria-hidden="true"></i> Clientes</h5></a>
-            <a href="retiros_realizados.html"><h5><i class="fa fa-shopping-cart" aria-hidden="true"></i> Retiros</h5></a>
-            <a href="agregar_gasto.html"><h5><i class="fa fa-comment" aria-hidden="true"></i> Gastos</h5></a>
-            <a href="agregar_gasto.html"><h5><i class="fa fa-flag" aria-hidden="true"></i> Zona</h5></a>
-            <a id="cerrar-session-btn"><h5><i class="fa fa-flag" aria-hidden="true"></i> Cerrar Sesion</h5></a>
+            <p><a style="background: #a3498b; color: #fff; border-color: #a3498b;" href="#" class="btn-soncronizar button active"><i class="fa fa-refresh" aria-hidden="true"></i> Sincronizar</a></p>  
+            <a href="listado.html"><h5><i class="fa fa-dollar" aria-hidden="true"></i> Lista Prestamos</h5></a>
+            <!-- <a href="retiros_realizados.html"><h5><i class="fa fa-shopping-cart" aria-hidden="true"></i> Retiros</h5></a> -->
+            <a href="agregar_prestamo.html"><h5><i class="fa fa-plus" aria-hidden="true"></i> Agregar Prestamo</h5></a>
+            <a href="agregar_gasto.html"><h5><i class="fa fa-minus" aria-hidden="true"></i> Agregar Gasto</h5></a>
+            <a href="agregar_cliente.html"><h5><i class="fa fa-user-plus" aria-hidden="true"></i> Agregar Cliente</h5></a>
+            <a href="agregar_zona.html"><h5><i class="fa fa-map-signs" aria-hidden="true"></i> Agregar Zona</h5></a>
+            <a id="cerrar-session-btn"><h5><i class="fa fa-sign-out" aria-hidden="true"></i> Cerrar Sesion</h5></a>
         </div>
     </div> 
 
@@ -91,7 +92,7 @@
             <div class="toolbar"> 
                 <div class="toolbar-inner">
                     <div class="toolbar-icons">
-                        <a href="retiros_realizados.html"><i class="fa fa-sign-in retiros-icon" aria-hidden="true"></i></a>
+                        <a href="agregar_cliente.html"><i class="fa fa-user-plus cliente-icon" aria-hidden="true"></i></a>
                         <a href="listado.html"><i class="fa fa-list listado-icon" aria-hidden="true"></i></a>
                         <a href="agregar_prestamo.html"><i class="fa fa-arrow-up prestamo-icon" aria-hidden="true"></i></a>
                         <a href="agregar_gasto.html"><i style="border-right: 0;" class="fa fa-arrow-down gasto-icon" aria-hidden="true"></i></a>
@@ -101,12 +102,19 @@
         </div>
     </div>
 
+    <script type="text/javascript" src="js/jquery-3.2.1.min.js"></script>
+    <script type="text/javascript" src="lib/jquery-xmlrpc-master/jquery.xmlrpc.js"></script>
+    <script type="text/javascript" src="js/odoo.js"></script>
+    <script type="text/javascript" src="js/general.js"></script>
     <script type="text/javascript" src="js/database.js"></script>
     <script type="text/javascript" src="js/login.js"></script>
     <script type="text/javascript" src="js/draggable.js"></script>
     <script type="text/javascript" src="cordova.js"></script>
     <script type="text/javascript" src="lib/framework7/js/framework7.min.js"></script>
     <script type="text/javascript" src="js/my-app.js"></script>
+    <script type="text/javascript" src="js/prestamos.js"></script>
+    <script type="text/javascript" src="js/gastos.js"></script>
+    <script type="text/javascript" src="js/cliente.js"></script>
 </body>
 <style type="text/css">
     .content-block{

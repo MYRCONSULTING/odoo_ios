@@ -76,3 +76,20 @@
   -khtml-user-dragg: element;
   -webkit-user-dragg: element;
 }
+
+.tarjeta-prestamo{
+    background: #7c7bad;
+    padding: 20px 4px;
+    border-radius: 5px;
+    color: #fff;
+    font-size: 11px;
+}
+
+#lista-prestamos .item-text{
+    font-size: 13px;
+    height: 17px;
+}
+
+#lista-prestamos .item-title{
+  font-size: 15px;
+}

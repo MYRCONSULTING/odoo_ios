@@ -1,0 +1,64 @@
+<!-- We don't need a full layout in this file because this page will be parsed with Ajax. -->
+<!-- Top Navbar-->
+<div class="navbar">
+    <div class="navbar-inner">
+        <div class="left">
+            <a href="#" class="back link">
+                <i class="fa fa-angle-left" aria-hidden="true"></i>
+            </a>
+        </div>
+        <div class="center sliding">Nuevo Cliente</div>
+        <div class="right">
+            <a href="#" class="link icon-only open-panel"><i class="fa fa-list-ul" aria-hidden="true"></i></a>
+        </div>
+    </div>
+</div>
+<div class="pages">
+    <div data-page="agregar_cliente" class="page toolbar-through navbar-through">
+        <div class="page-content">
+          <div style="margin-top: 0;" class="list-block">
+              <ul>
+                <!-- Select -->
+                <li>
+                  <div class="item-content">
+                    <div class="item-inner">
+                      <div class="item-title label">Zona</div>
+                      <div class="item-input">
+                        <select dir="rtl" id="lista-zonas-cliente">
+                        </select>
+                      </div>
+                    </div>
+                  </div>
+                </li>
+                <!-- Text inputs -->
+                <li>
+                  <div class="item-content">
+                    <div class="item-inner">
+                      <div class="item-title label">Nombre</div>
+                      <div class="item-input">
+                        <input id="nombre-cliente" style="text-align: right;" type="text" placeholder="Nombre">
+                      </div>
+                    </div>
+                  </div>
+                </li>
+                <li>
+                  <a style="color: #a3498b;" href="#" class="item-link list-button btn-agregar-cliente">Guardar</a>
+                </li>
+              </ul>
+            </div> 
+             <!-- We can wrap content with additional "content-block-inner" element for additional highlighting -->
+            <!-- <div style="margin-bottom: 0;" class="content-block">
+              <div class="content-block-inner">
+                    <h4> > Nulla quis lorem ut libero</h4>
+                    <ul>
+                        <li>Proin eget tortor risus.</li>
+                        <li>Donec sollicitudin molestie malesuada.</li>
+                        <li>Vivamus magna justo.</li>
+                        <li>convallis at tellus.</li>
+                        <li>Nulla quis lorem ut libero malesuada feugiat.</li>
+                    </ul>
+              </div>
+            </div> -->
+        </div>
+    </div>
+</div>

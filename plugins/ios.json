@@ -18,7 +18,20 @@
         },
         "cordova-plugin-sqlite-2": {
             "PACKAGE_NAME": "com.phonegap.framework7"
+        },
+        "cordova-plugin-network-information": {
+            "PACKAGE_NAME": "com.mundocomputo.odoo"
+        },
+        "cordova-plugin-googlemaps": {
+            "API_KEY_FOR_IOS": "AIzaSyBv_8SkOXWbno-TDIeY7LaerT6GNDzwLEg",
+            "NSLOCATIONWHENINUSEUSAGEDESCRIPTION": "Show your location on the map",
+            "NSLOCATIONALWAYSUSAGEDESCRIPTION": "Trace your location on the map",
+            "PACKAGE_NAME": "com.mundocomputo.odoo"
         }
     },
-    "dependent_plugins": {}
+    "dependent_plugins": {
+        "com.googlemaps.ios": {
+            "PACKAGE_NAME": "com.mundocomputo.odoo"
+        }
+    }
 }
