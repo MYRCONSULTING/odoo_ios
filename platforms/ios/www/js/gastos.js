@@ -9,7 +9,21 @@ $$(document).on('click', '.btn-agregar-gasto', function (e) {
 	var valor = $$('#cantidad-gasto').val();
 	var concepto = $$('#gasto-realizado').val();
 
-	agregarGasto(zona, fecha, valor, concepto);
+	var datos = [];
+	datos['id'] = 'null';
+	datos['zona'] = zona;
+	datos['valor'] = valor;
+	datos['fecha'] = fecha;
+	datos['razon'] = concepto;
+
+	if(verificarConexion() != 'none'){
+		agregarGastoConexion(datos);
+		//agregarGasto(datos);
+	}
+	else{ 
+		agregarGasto(datos);
+	}
+	
 });
 
 /**
@@ -21,18 +35,18 @@ $$(document).on('click', '.btn-agregar-gasto', function (e) {
  * @param  {[type]} concepto [description]
  * @return {[type]}          [description]
  */
-function agregarGasto(zona, fecha, valor, concepto){
-	if (valor != '' && fecha != '' && zona != 0 && concepto != 0) {
+function agregarGasto(gasto){
+	if (gasto['valor'] != '' && gasto['fecha'] != '' && gasto['zona'] != 0 && gasto['razon'] != 0) {
 		db.transaction(function(tx) {
-		    tx.executeSql('INSERT INTO gastos VALUES (?,?,?,?,?)', ['1', zona, valor, fecha, concepto]);
+		    tx.executeSql('INSERT INTO gastos VALUES (?,?,?,?,?)', ['1', gasto['zona'], gasto['valor'], gasto['fecha'], gasto['razon']]);
 		}, function(error) {
 			myApp.alert('Ha ocurrido un error, por favor intente de nuevo más tarde', 'Error!');
 		}, function() {
-		    myApp.alert('Gasto registrado exitosamente!', 'Exito');
+		    myApp.alert('Gasto registrado temporalmente!', 'Exito');
 		    nuevosGastos();
 		}); 
 	}
-}
+} 
 
 /**
  * [agregarGasto description]
@@ -43,15 +57,9 @@ function agregarGasto(zona, fecha, valor, concepto){
  * @param  {[type]} concepto [description]
  * @return {[type]}          [description]
  */
-function agregarGastoConexion(zona, fecha, valor, concepto){
-	if (valor != '' && fecha != '' && zona != 0 && concepto != 0) {
-		var datos = [];
-		datos['id'] = 'null';
-		datos['zona'] = zona;
-		datos['valor'] = valor;
-		datos['fecha'] = fecha;
-		datos['concepto'] = concepto;
-		agregarGastoOdoo(datos);
+function agregarGastoConexion(gasto){
+	if (gasto['valor'] != '' && gasto['fecha'] != '' && gasto['zona'] != 0 && gasto['razon'] != 0) {
+		agregarGastoOdoo(gasto);
 		myApp.alert('Gasto registrado exitosamente!', 'Exito');
 	}
 }
@@ -74,4 +82,22 @@ function agregarGastoConexion(zona, fecha, valor, concepto){
 	       		}
 	       	});
 	    });
+	}
+
+
+/**
+ * [limpiarClientes description]
+ * @author Nikollai Hernandez G. <nikollaihernandez@gmail.com>
+ * @return {[type]} [description]
+ */
+	function limpiarGastos(){
+		// En caso de que no existan las tablas en la base de datos, este proceso es el encargado de crearlas.
+		db.transaction(function(tx) {
+		    tx.executeSql('DELETE FROM gastos');
+		}, function(error) {
+			return false;
+		    //console.log('Transaction ERROR: ' + error.message);
+		}, function() {
+			
+		});
 	}

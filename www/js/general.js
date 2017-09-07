@@ -4,6 +4,10 @@
 	var lista_zonas = [];
 	var lista_clientes = [];
 	var lista_paises = [];
+	// ---------- Variables para la hubicacion de orden de visita --------- //
+		var newIdsOrder = [];
+	    var posicionVisita = 0;
+    // -------------------------------------------------------------------- //
 // ======== fin VARIABLES GLOBALES ======== //
 
 function verificarConexion(){
@@ -111,6 +115,19 @@ function cargarZonas(select){
  */
 	function sincronizar(){
 		if(verificarConexion() != 'none'){
+			// ======================= POSICIONES DE VISITAS ===================== //
+	        posicionVisita = 0;
+	        $('.list-block.sortable').find('li').each(function(){ 
+	            var data = [];
+	            data['id'] = $(this).attr('data-id');
+	            data['orden_visita'] = posicionVisita;
+	            if (verificarConexion() != 'none') {
+	                actualizarPosicionesOdoo(data);
+	            }
+	            posicionVisita++;
+	            newIdsOrder.push(data); 
+	        }); 
+
 			// =============================== PAGOS =============================== //
 			if (lista_pagos.length > 0) {
 				for (var i = 0; i < lista_pagos.length; i++) {
@@ -121,6 +138,7 @@ function cargarZonas(select){
 
 			limpiarPagos();
 			// ============================== PRESTAMOS ================================ //
+			listaPrestamosOdoo();
 			cargarPrestamos();
 
 			if (lista_nuevos_prestamos.length > 0) {
@@ -149,7 +167,6 @@ function cargarZonas(select){
 				if (lista_nuevas_zonas.length > 0) {
 					for (var i = 0; i < lista_nuevas_zonas.length; i++) {
 						zona = lista_nuevas_zonas[i];
-						console.log(i);
 						agregarZonaOdoo(zona);
 					}
 				}
@@ -157,12 +174,27 @@ function cargarZonas(select){
 
 			limpiarZonas();
 
+			// ================================ GASTOS ============================== //
+			nuevosGastos();
+			
+			setTimeout(function(){
+				if (lista_nuevos_gastos.length > 0) {
+					for (var i = 0; i < lista_nuevos_gastos.length; i++) {
+						gasto = lista_nuevos_gastos[i];
+						agregarGastoOdoo(gasto);
+					}
+				}
+			}, 200)
+
+			limpiarGastos();
+
 			setTimeout(function(){
 				myApp.hidePreloader();
 				myApp.alert('Sincronización terminada con exito!', 'Exito!');
 			}, 300);
 		}
 		else{
+			myApp.hidePreloader();
 			myApp.alert('Por favor verifique su conexión a internet!', 'Error');
 		}
 	}

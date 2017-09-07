@@ -6,15 +6,12 @@
  */
 var user = [];
 
-
 function login(userData){
-    // Variable con la informacion de conexion a odoo
-    data_conexion = userData;
     //Llamado a la funcino conexion en la ruta js/odoo.js
     if (data_conexion['uid'] != false){
         // En caso de que no existan las tablas en la base de datos, este proceso es el encargado de crearlas.
         db.transaction(function(tx) {
-            tx.executeSql('INSERT INTO usuario VALUES (?,?,?,?)', [data_conexion['uid'], data_conexion['email_login'], data_conexion['pass_login'], data_conexion['ip_login']]);
+            tx.executeSql('INSERT INTO usuario VALUES (?,?,?,?,?,?)', [data_conexion['uid'], data_conexion['email_login'], data_conexion['pass_login'], data_conexion['ip_login'], data_conexion['db'], id_empleado()]);
         }, function(error) {
             myApp.alert('Ha ocurrido un error, por favor intente de nuevo más tarde', 'Error!');
         }, function() {
@@ -39,7 +36,6 @@ function usuarioConectado(){
        		if (res.rows.length > 0) {
        			user = res.rows.item(0);
                 data_conexion = res.rows.item(0);
-                data_conexion['db'] = 'demo';
        		}
        	});
     });
@@ -56,7 +52,8 @@ function logOut(){
     		return false;
     	    //console.log('Transaction ERROR: ' + error.message);
     	}, function() {
-    		user = null;
+    		user = [];
+            data_conexion = [];
     	    mainView.router.loadPage('login.html'); 
     	});
     });

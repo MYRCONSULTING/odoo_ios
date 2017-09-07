@@ -18,9 +18,13 @@ function tablasInicialesDB(){
   // En caso de que no existan las tablas en la base de datos, este proceso es el encargado de crearlas.
   
   // ========== TABLA PARA MANTENER EL USUARIO LOGUEADO ========== //
+   // db.transaction(function (tx) {
+   //    tx.executeSql('DROP TABLE usuario');
+   //  });
   db.transaction(function(tx) {
-    tx.executeSql('CREATE TABLE IF NOT EXISTS usuario (uid, email_login, pass_login, ip_login)');
+    tx.executeSql('CREATE TABLE IF NOT EXISTS usuario (uid, email_login, pass_login, ip_login, db, id_empleado)');
   }, function(error) {
+      myApp.hidePreloader();
       myApp.alert('Ha ocurrido un error en la base de datos', 'Error');
       console.log('Transaction ERROR: ' + error.message);
   }, function() {
@@ -32,6 +36,7 @@ function tablasInicialesDB(){
   db.transaction(function(tx) {
     tx.executeSql('CREATE TABLE IF NOT EXISTS pagos (id, id_orden, cobrador, secuencia, fecha, cantidad)');
   }, function(error) {
+      myApp.hidePreloader();
       myApp.alert('Ha ocurrido un error en la base de datos', 'Error');
       console.log('Transaction ERROR: ' + error.message);
   }, function() {
@@ -46,6 +51,7 @@ function tablasInicialesDB(){
   db.transaction(function(tx) {
     tx.executeSql('CREATE TABLE IF NOT EXISTS prestamos (id, zona, cliente, valor_prestamo, interes, cuotas, fecha)');
   }, function(error) {
+      myApp.hidePreloader();
       myApp.alert('Ha ocurrido un error en la base de datos', 'Error');
       console.log('Transaction ERROR: ' + error.message);
   }, function() {
@@ -58,8 +64,9 @@ function tablasInicialesDB(){
     //   tx.executeSql('DROP TABLE prestamos');
     // });
   db.transaction(function(tx) {
-    tx.executeSql('CREATE TABLE IF NOT EXISTS gastos (id, zona, valor, fecha, concepto)');
+    tx.executeSql('CREATE TABLE IF NOT EXISTS gastos (id, zona, valor, fecha, razon)');
   }, function(error) {
+      myApp.hidePreloader();
       myApp.alert('Ha ocurrido un error en la base de datos', 'Error');
       console.log('Transaction ERROR: ' + error.message);
   }, function() {
@@ -73,6 +80,7 @@ function tablasInicialesDB(){
   db.transaction(function(tx) {
     tx.executeSql('CREATE TABLE IF NOT EXISTS clientes (id, nombre, zona, direccion, telefono, movil)');
   }, function(error) {
+      myApp.hidePreloader();
       myApp.alert('Ha ocurrido un error en la base de datos', 'Error');
       console.log('Transaction ERROR: ' + error.message);
   }, function() {
@@ -87,6 +95,7 @@ function tablasInicialesDB(){
   db.transaction(function(tx) {
     tx.executeSql('CREATE TABLE IF NOT EXISTS zonas (id, nombre, pais, encargado, capital, caja)');
   }, function(error) {
+      myApp.hidePreloader();
       myApp.alert('Ha ocurrido un error en la base de datos', 'Error');
       console.log('Transaction ERROR: ' + error.message);
   }, function() {

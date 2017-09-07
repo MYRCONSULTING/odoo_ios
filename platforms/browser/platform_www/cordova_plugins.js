@@ -38,14 +38,6 @@ module.exports = [
         "id": "cordova-plugin-network-information.NetworkInfoProxy",
         "pluginId": "cordova-plugin-network-information",
         "runs": true
-    },
-    {
-        "file": "plugins/cordova-plugin-googlemaps/www/googlemaps-cdv-plugin.js",
-        "id": "cordova-plugin-googlemaps.cordova-plugin-googlemaps",
-        "pluginId": "cordova-plugin-googlemaps",
-        "clobbers": [
-            "cordova-plugin-googlemaps"
-        ]
     }
 ];
 module.exports.metadata = 
@@ -55,8 +47,7 @@ module.exports.metadata =
     "cordova-plugin-console": "1.0.6",
     "cordova-plugin-statusbar": "1.0.1",
     "cordova-plugin-sqlite-2": "1.0.4",
-    "cordova-plugin-network-information": "1.3.3",
-    "cordova-plugin-googlemaps": "1.4.5"
+    "cordova-plugin-network-information": "1.3.3"
 }
 // BOTTOM OF METADATA
 });

@@ -19,6 +19,12 @@ $$(document).on('click', '.btn-agregar-pago', function (e) {
     agregarPago(id_orden, cantidad); 
 });
 
+$$(document).on('change', '#lista-zonas-prestamo', function (e) {
+	if(verificarConexion() != 'none'){
+		listaClientesPorZonaOdoo('#lista-clientes-prestamo', $$(this).val());
+	}
+});
+
 // Agregar un nuevo prestamo
 $$(document).on('click', '.btn-agregar-prestamo', function (e) {
 	// Variables para la insercion del nuevo prestamo
@@ -31,11 +37,20 @@ $$(document).on('click', '.btn-agregar-prestamo', function (e) {
 
 	//Si el dispositivo tiene conexion a internet se registrará directamente en odoo
 	if(verificarConexion() != 'none'){
-		agregarPrestamoConexion(cuotas, valor, interes, fecha, zona, cliente);
+		if (cuotas.length > 0 && valor.length > 0 && interes.length > 0 && cliente != 0 && zona != 0) {
+			agregarPrestamoConexion(cuotas, valor, interes, fecha, zona, cliente);
+			$$('#cuotas-prestamo').val('');
+			$$('#valor-prestamo').val('');
+			$$('#interes-prestamo').val(''); 
+		}
+		else{
+			myApp.alert('Por favor complete todos los campos', 'Error!');
+		}
 	}
 	//De lo contrario se creara temporalmente para luego ser sincronizado
 	else{
-		agregarPrestamo(cuotas, valor, interes, fecha, zona, cliente);
+		myApp.alert('Verifique su conexion a internet', 'Error!');
+		//agregarPrestamo(cuotas, valor, interes, fecha, zona, cliente);
 	}
 });
 
@@ -68,7 +83,7 @@ function cargarPrestamos(){
 			else{
 				var color = '#7c7bad';
 			}
-			prestamos_DOM += '<li id="orden-'+prestamo['id']+'" draggable="true">'+
+			prestamos_DOM += '<li data-order="'+prestamo['orden_visita']+'" data-id="'+prestamo['id']+'" id="orden-'+prestamo['id']+'">'+
 		                        '<div class="item-content">'+
 		                            '<div class="item-media">'+
 		                                '<div style="background: '+color+'" class="tarjeta-prestamo">'+prestamo['name']+'</div>'+
@@ -83,8 +98,12 @@ function cargarPrestamos(){
 		                                '<div class="item-text">Zona: <b>'+prestamo['zona'][1]+'</b></div>'+
 		                            '</div>'+
 		                        '</div>'+
+		                        '<div class="sortable-handler"></div>'+
 		                    '</li>';
 		}
+	}
+	else{
+		myApp.alert('No se han encontrado prestamos activos', 'Aviso!');
 	}
 
 	$$('#lista-prestamos').html(prestamos_DOM);

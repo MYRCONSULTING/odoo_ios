@@ -21,9 +21,6 @@
         },
         "cordova-plugin-network-information": {
             "PACKAGE_NAME": "com.mundocomputo.odoo"
-        },
-        "cordova-plugin-googlemaps": {
-            "PACKAGE_NAME": "com.mundocomputo.odoo"
         }
     },
     "dependent_plugins": {}

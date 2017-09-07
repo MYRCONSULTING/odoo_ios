@@ -93,3 +93,7 @@
 #lista-prestamos .item-title{
   font-size: 15px;
 }
+
+.statusbar-overlay {
+    background: #7c7bad;
+}
