@@ -156,7 +156,6 @@ var lista_zonasid;
  * @return {[type]}        [description]
  */
 	function listaClientesPorZonaOdoo(select = '', zona){
-		myApp.alert(zona);
 		$.xmlrpc({
 		    url: data_conexion['ip_login'] + '/xmlrpc/2/object',
 		    methodName: 'execute_kw',
