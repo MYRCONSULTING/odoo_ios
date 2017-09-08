@@ -134,7 +134,7 @@ function cargarZonas(select){
 					pago = lista_pagos[i];
 					agregarPagoOdoo(pago);
 				}
-			}
+			} 
 
 			limpiarPagos();
 			// ============================== PRESTAMOS ================================ //

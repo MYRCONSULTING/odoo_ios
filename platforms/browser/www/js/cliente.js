@@ -154,6 +154,6 @@
 			return false;
 		    //console.log('Transaction ERROR: ' + error.message);
 		}, function() {
-			
+			lista_nuevas_zonas = [];
 		});
 	}

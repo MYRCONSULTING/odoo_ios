@@ -162,7 +162,7 @@ function limpiarPagos(){
 		return false;
 	    //console.log('Transaction ERROR: ' + error.message);
 	}, function() {
-		
+		lista_pagos = [];
 	});
 }
 
@@ -174,7 +174,7 @@ function limpiarPrestamos(){
 		return false;
 	    //console.log('Transaction ERROR: ' + error.message);
 	}, function() {
-		
+		lista_nuevos_prestamos = [];
 	});
 }
 

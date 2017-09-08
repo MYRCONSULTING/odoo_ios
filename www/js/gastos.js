@@ -98,6 +98,6 @@ function agregarGastoConexion(gasto){
 			return false;
 		    //console.log('Transaction ERROR: ' + error.message);
 		}, function() {
-			
+			lista_nuevos_gastos = [];
 		});
 	}

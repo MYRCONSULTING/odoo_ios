@@ -54,6 +54,11 @@ function logOut(){
     	}, function() {
     		user = [];
             data_conexion = [];
+            limpiarPagos();
+            limpiarPrestamos();
+            limpiarClientes();
+            limpiarZonas();
+            limpiarGastos();
     	    mainView.router.loadPage('login.html'); 
     	});
     });
