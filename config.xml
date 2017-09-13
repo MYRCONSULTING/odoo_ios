@@ -1,12 +1,12 @@
 <?xml version='1.0' encoding='utf-8'?>
 <widget id="com.mundocomputo.odoo" version="1.0.0" xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0">
-    <name>Odoo iOS</name>
+    <name>Odoo</name>
     <description>
-        A basic Framework7 template for PhoneGap.
     </description>
-    <author email="dev@cordova.apache.org" href="http://cordova.io">
-        Apache Cordova Team
+    <author email="contacto@mundocomputo.com" href="http://www.mundocomputo.com">
+        Mundocomputo Armenia
     </author>
+    <icon src="www/images/icon.png"/>
     <content src="index.html" />
     <access origin="*" />
     <allow-intent href="http://*/*" />
@@ -31,4 +31,5 @@
     <engine name="ios" spec="~4.4.0" />
     <plugin name="cordova-plugin-sqlite-2" spec="~1.0.4" />
     <plugin name="cordova-plugin-network-information" spec="cordova-plugin-network-information" />
+    <engine name="android" spec="~6.1.2" />
 </widget>
